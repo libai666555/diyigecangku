@@ -544,6 +544,17 @@ a {
   background: rgba(255, 252, 244, 0.72);
 }
 
+.about .section-heading {
+  display: block;
+  margin: 0;
+}
+
+.about .section-heading h2 {
+  max-width: 520px;
+  line-height: 1.08;
+  white-space: normal;
+}
+
 .about-copy {
   display: grid;
   gap: 22px;
