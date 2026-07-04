@@ -1,6 +1,7 @@
 :root {
   --paper: #f8f2e7;
   --paper-soft: #efe3d1;
+  --paper-warm: #fffaf0;
   --ink: #1c211f;
   --ink-soft: #3d4640;
   --muted: #6e655b;
@@ -8,7 +9,6 @@
   --pine: #23483c;
   --cinnabar: #9b3f32;
   --moon: #e8d7ad;
-  --mist: rgba(255, 252, 244, 0.78);
   --white: #fffdf8;
   --shadow: 0 24px 70px rgba(38, 29, 20, 0.13);
   --radius: 8px;
@@ -108,8 +108,8 @@ a {
 }
 
 .nav-links a {
-  min-width: 54px;
-  padding: 10px 10px;
+  min-width: 48px;
+  padding: 10px 8px;
   color: currentColor;
   font-size: 0.94rem;
   text-align: center;
@@ -133,7 +133,7 @@ a {
 
 .hero {
   position: relative;
-  min-height: 84svh;
+  min-height: 86svh;
   isolation: isolate;
   display: grid;
   align-items: end;
@@ -198,7 +198,7 @@ a {
 
 .hero-title span {
   display: block;
-  max-width: 720px;
+  max-width: 740px;
   margin-top: 22px;
   font-size: var(--fs-hero-line);
   line-height: 1.15;
@@ -260,7 +260,7 @@ a {
   position: absolute;
   right: max(22px, calc((100vw - var(--max)) / 2));
   bottom: 42px;
-  width: min(300px, calc(100% - 44px));
+  width: min(310px, calc(100% - 44px));
   padding: 20px 22px;
   border-left: 2px solid var(--moon);
   background: rgba(8, 15, 12, 0.18);
@@ -334,22 +334,22 @@ a {
   letter-spacing: 0;
 }
 
-.work-grid {
+.featured {
+  background: linear-gradient(180deg, rgba(255, 252, 244, 0.74), rgba(239, 227, 209, 0.74));
+}
+
+.featured-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1.15fr 0.85fr;
   gap: 16px;
 }
 
-.work-card {
-  position: relative;
-  min-height: 330px;
-  padding: 28px;
-  overflow: hidden;
+.feature-card {
+  min-height: 270px;
+  padding: 30px;
   border: 1px solid rgba(28, 33, 31, 0.14);
   border-radius: var(--radius);
-  background:
-    linear-gradient(145deg, rgba(255, 252, 244, 0.9), rgba(239, 227, 209, 0.72)),
-    var(--white);
+  background: rgba(255, 253, 248, 0.82);
   box-shadow: none;
   transition:
     transform 220ms ease,
@@ -357,105 +357,187 @@ a {
     border-color 220ms ease;
 }
 
-.work-card::after {
-  position: absolute;
-  right: -28px;
-  bottom: -42px;
-  width: 150px;
-  height: 150px;
-  border: 1px solid rgba(155, 63, 50, 0.18);
-  border-radius: 50%;
-  content: "";
+.feature-card-large {
+  grid-row: span 2;
+  min-height: 556px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background:
+    linear-gradient(145deg, rgba(35, 72, 60, 0.9), rgba(28, 33, 31, 0.92)),
+    var(--pine);
+  color: var(--white);
 }
 
-.work-card:hover {
+.feature-card:hover {
   border-color: rgba(28, 33, 31, 0.28);
   box-shadow: var(--shadow);
   transform: translateY(-5px);
 }
 
-.work-number {
-  display: grid;
-  width: 44px;
-  height: 44px;
-  place-items: center;
-  border: 1px solid var(--line);
-  color: var(--cinnabar);
-  font-size: 1.1rem;
-  font-weight: 760;
-}
-
-.work-type {
-  margin: 46px 0 12px;
-  color: var(--pine);
-  font-size: 0.82rem;
-  font-weight: 760;
-}
-
-.work-card h3 {
+.feature-card h3 {
   margin: 0;
-  font-size: var(--fs-card-title);
-  line-height: 1.35;
+  font-size: clamp(1.55rem, 3vw, 2.55rem);
+  line-height: 1.24;
   font-weight: 680;
 }
 
-.work-card p:last-child {
-  margin: 22px 0 0;
+.feature-card p:not(.piece-kind) {
+  margin: 18px 0 0;
   color: var(--muted);
-  line-height: 1.86;
+  line-height: 1.9;
 }
 
-.prose {
-  background: var(--pine);
-  color: var(--white);
+.feature-card-large p:not(.piece-kind) {
+  color: rgba(255, 252, 244, 0.76);
 }
 
-.prose .section-kicker {
-  color: var(--moon);
+.feature-lines {
+  font-size: 1.34rem;
 }
 
-.prose-layout {
+.library {
+  background: var(--paper-warm);
+}
+
+.library-layout {
   display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.35fr);
-  gap: clamp(34px, 7vw, 90px);
+  grid-template-columns: minmax(190px, 0.34fr) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 78px);
+  align-items: start;
 }
 
-.prose .section-heading {
+.side-heading {
+  position: sticky;
+  top: 112px;
   display: block;
   margin: 0;
 }
 
-.prose-list {
-  border-top: 1px solid rgba(255, 252, 244, 0.22);
-}
-
-.prose-item {
+.piece-list {
   display: grid;
-  grid-template-columns: 88px minmax(0, 1fr);
-  gap: 28px;
-  padding: 28px 0;
-  border-bottom: 1px solid rgba(255, 252, 244, 0.22);
+  gap: 14px;
 }
 
-.prose-item time {
-  color: var(--moon);
+.piece-card {
+  border: 1px solid rgba(28, 33, 31, 0.14);
+  border-radius: var(--radius);
+  background: rgba(255, 253, 248, 0.78);
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.piece-card[open] {
+  background: rgba(255, 253, 248, 0.92);
+}
+
+.piece-card summary {
+  position: relative;
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr) max-content;
+  gap: 18px;
+  align-items: center;
+  min-height: 82px;
+  padding: 20px 60px 20px 24px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.piece-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.piece-card summary::after {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  color: var(--cinnabar);
+  content: "+";
+  font-size: 1.35rem;
+  transform: translateY(-50%);
+}
+
+.piece-card[open] summary::after {
+  content: "−";
+}
+
+.piece-kind {
+  margin: 0;
+  color: var(--cinnabar);
+  font-size: 0.82rem;
   font-weight: 760;
 }
 
-.prose-item h3,
-.prose-item p {
-  margin: 0;
-}
-
-.prose-item h3 {
-  font-size: 1.28rem;
+.piece-title {
+  font-size: var(--fs-card-title);
+  line-height: 1.36;
   font-weight: 680;
 }
 
-.prose-item p {
-  margin-top: 8px;
-  color: rgba(255, 252, 244, 0.72);
-  line-height: 1.86;
+.piece-card time,
+.piece-card summary > span:last-child {
+  color: var(--muted);
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+
+.piece-body {
+  padding: 0 24px 26px 130px;
+  border-top: 1px solid rgba(28, 33, 31, 0.1);
+}
+
+.piece-body p {
+  margin: 22px 0 0;
+}
+
+.poem-lines {
+  color: var(--ink-soft);
+  font-size: 1.08rem;
+  line-height: 2.05;
+}
+
+.dual-poem {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 52px);
+}
+
+.prose-library {
+  background: var(--pine);
+  color: var(--white);
+}
+
+.prose-library .section-kicker,
+.prose-library .piece-kind {
+  color: var(--moon);
+}
+
+.prose-library .piece-card {
+  border-color: rgba(255, 252, 244, 0.18);
+  background: rgba(255, 252, 244, 0.07);
+}
+
+.prose-library .piece-card[open] {
+  background: rgba(255, 252, 244, 0.1);
+}
+
+.prose-library .piece-card summary::after {
+  color: var(--moon);
+}
+
+.prose-library .piece-body {
+  border-top-color: rgba(255, 252, 244, 0.16);
+}
+
+.prose-library .piece-card time,
+.prose-library .piece-card summary > span:last-child {
+  color: rgba(255, 252, 244, 0.62);
+}
+
+.prose-text {
+  color: rgba(255, 252, 244, 0.78);
+  font-size: 1.05rem;
+  line-height: 1.94;
 }
 
 .about {
@@ -562,7 +644,7 @@ a {
   }
 }
 
-@media (max-width: 920px) {
+@media (max-width: 980px) {
   :root {
     --fs-hero-name: 5.2rem;
     --fs-hero-line: 2.72rem;
@@ -582,24 +664,33 @@ a {
   .preface-grid,
   .section-heading,
   .about-grid,
-  .prose-layout {
+  .library-layout {
     grid-template-columns: 1fr;
+  }
+
+  .side-heading {
+    position: static;
   }
 
   .preface-copy,
-  .work-grid {
+  .featured-grid,
+  .dual-poem {
     grid-template-columns: 1fr;
+  }
+
+  .feature-card-large {
+    min-height: 430px;
   }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 720px) {
   :root {
     --fs-hero-name: 3.9rem;
     --fs-hero-line: 2rem;
     --fs-hero-copy: 1rem;
     --fs-body-large: 1.08rem;
     --fs-section-title: 2.5rem;
-    --fs-card-title: 1.28rem;
+    --fs-card-title: 1.24rem;
     --fs-contact-title: 2.6rem;
   }
 
@@ -615,10 +706,14 @@ a {
     height: 34px;
   }
 
+  .nav-links {
+    gap: 0;
+  }
+
   .nav-links a {
     min-width: 0;
-    padding: 9px 6px;
-    font-size: 0.82rem;
+    padding: 9px 5px;
+    font-size: 0.78rem;
   }
 
   .hero {
@@ -637,14 +732,29 @@ a {
     padding-left: 18px;
   }
 
-  .work-card {
-    min-height: 280px;
+  .feature-card {
+    min-height: 230px;
     padding: 24px;
   }
 
-  .prose-item {
+  .piece-card summary {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 8px;
+    padding: 20px 50px 20px 20px;
+  }
+
+  .piece-card time,
+  .piece-card summary > span:last-child {
+    white-space: normal;
+  }
+
+  .piece-body {
+    padding: 0 20px 24px;
+  }
+
+  .poem-lines,
+  .prose-text {
+    font-size: 1rem;
   }
 
   .footer {
