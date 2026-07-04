@@ -1,11 +1,11 @@
 const topbar = document.querySelector("[data-topbar]");
-const canvas = document.querySelector("[data-hero-canvas]");
+const canvas = document.querySelector("[data-ink-canvas]");
 const ctx = canvas.getContext("2d", { alpha: true });
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 const pointer = {
-  x: 0.5,
-  y: 0.5,
+  x: 0.52,
+  y: 0.42,
   active: false,
 };
 
@@ -14,13 +14,6 @@ let height = 0;
 let dpr = 1;
 let frame = 0;
 let rafId = 0;
-
-const palette = [
-  [246, 196, 111],
-  [15, 111, 92],
-  [41, 76, 155],
-  [216, 91, 69],
-];
 
 function resizeCanvas() {
   const rect = canvas.getBoundingClientRect();
@@ -32,126 +25,127 @@ function resizeCanvas() {
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 }
 
-function drawRibbon(time, index, color) {
-  const rows = 7 + index;
-  const amplitude = height * (0.035 + index * 0.005);
-  const yBase = height * (0.22 + index * 0.16);
-  const mousePull = pointer.active ? (pointer.y - 0.5) * 44 : 0;
-
+function drawMountain(points, color, alpha) {
   ctx.beginPath();
-  for (let i = 0; i <= rows; i += 1) {
-    const y = yBase + i * 24 + mousePull;
-    for (let x = -40; x <= width + 40; x += 22) {
-      const phase = x * 0.01 + time * (0.00055 + index * 0.00014) + i * 0.72;
-      const px = x;
-      const py =
-        y +
-        Math.sin(phase) * amplitude +
-        Math.cos(phase * 0.62 + index) * amplitude * 0.45;
+  ctx.moveTo(points[0][0], height);
+  points.forEach(([x, y]) => ctx.lineTo(x, y));
+  ctx.lineTo(points[points.length - 1][0], height);
+  ctx.closePath();
+  ctx.fillStyle = color.replace("ALPHA", alpha);
+  ctx.fill();
+}
 
-      if (x === -40) {
-        ctx.moveTo(px, py);
+function drawMist(time) {
+  ctx.save();
+  ctx.globalAlpha = 0.36;
+  ctx.lineWidth = 1;
+  for (let i = 0; i < 9; i += 1) {
+    const y = height * (0.22 + i * 0.07);
+    const drift = Math.sin(time * 0.00024 + i) * 26;
+    const grad = ctx.createLinearGradient(0, y, width, y);
+    grad.addColorStop(0, "rgba(255, 252, 244, 0)");
+    grad.addColorStop(0.22, "rgba(255, 252, 244, 0.22)");
+    grad.addColorStop(0.72, "rgba(255, 252, 244, 0.16)");
+    grad.addColorStop(1, "rgba(255, 252, 244, 0)");
+    ctx.strokeStyle = grad;
+    ctx.beginPath();
+    for (let x = -60; x <= width + 60; x += 34) {
+      const wave = Math.sin(x * 0.012 + time * 0.0005 + i) * 8;
+      if (x === -60) {
+        ctx.moveTo(x + drift, y + wave);
       } else {
-        ctx.lineTo(px, py);
+        ctx.lineTo(x + drift, y + wave);
       }
     }
-  }
-
-  ctx.strokeStyle = `rgba(${color[0]}, ${color[1]}, ${color[2]}, ${0.2 - index * 0.025})`;
-  ctx.lineWidth = 1;
-  ctx.stroke();
-}
-
-function drawPanels(time) {
-  const drift = Math.sin(time * 0.00035) * 18;
-  const pullX = pointer.active ? (pointer.x - 0.5) * 34 : 0;
-  const pullY = pointer.active ? (pointer.y - 0.5) * 26 : 0;
-
-  const panels = [
-    {
-      x: width * 0.62 + pullX,
-      y: height * 0.16 + pullY,
-      w: width * 0.24,
-      h: height * 0.34,
-      color: "rgba(246, 196, 111, 0.12)",
-    },
-    {
-      x: width * 0.72 - drift + pullX * 0.3,
-      y: height * 0.52 + pullY * 0.5,
-      w: width * 0.18,
-      h: height * 0.22,
-      color: "rgba(216, 91, 69, 0.14)",
-    },
-    {
-      x: width * 0.44 + drift * 0.6,
-      y: height * 0.34 - pullY * 0.24,
-      w: width * 0.17,
-      h: height * 0.28,
-      color: "rgba(15, 111, 92, 0.15)",
-    },
-  ];
-
-  panels.forEach((panel, index) => {
-    ctx.save();
-    ctx.translate(panel.x, panel.y);
-    ctx.rotate((index - 1) * 0.08 + Math.sin(time * 0.00025 + index) * 0.025);
-    ctx.fillStyle = panel.color;
-    ctx.strokeStyle = "rgba(255, 253, 248, 0.22)";
-    ctx.lineWidth = 1;
-    ctx.fillRect(-panel.w / 2, -panel.h / 2, panel.w, panel.h);
-    ctx.strokeRect(-panel.w / 2, -panel.h / 2, panel.w, panel.h);
-    ctx.restore();
-  });
-}
-
-function drawField(time) {
-  ctx.clearRect(0, 0, width, height);
-
-  const base = ctx.createLinearGradient(0, 0, width, height);
-  base.addColorStop(0, "#10100e");
-  base.addColorStop(0.42, "#17231f");
-  base.addColorStop(0.72, "#1b1c2a");
-  base.addColorStop(1, "#11100f");
-  ctx.fillStyle = base;
-  ctx.fillRect(0, 0, width, height);
-
-  const glow = ctx.createRadialGradient(
-    width * (0.62 + (pointer.x - 0.5) * 0.1),
-    height * (0.36 + (pointer.y - 0.5) * 0.08),
-    40,
-    width * 0.58,
-    height * 0.36,
-    Math.max(width, height) * 0.8,
-  );
-  glow.addColorStop(0, "rgba(246, 196, 111, 0.18)");
-  glow.addColorStop(0.38, "rgba(15, 111, 92, 0.12)");
-  glow.addColorStop(1, "rgba(0, 0, 0, 0)");
-  ctx.fillStyle = glow;
-  ctx.fillRect(0, 0, width, height);
-
-  drawPanels(time);
-
-  palette.forEach((color, index) => {
-    drawRibbon(time, index, color);
-  });
-
-  ctx.save();
-  ctx.globalAlpha = 0.48;
-  ctx.strokeStyle = "rgba(255, 253, 248, 0.16)";
-  ctx.lineWidth = 1;
-  for (let x = -60; x < width + 80; x += 72) {
-    const shift = Math.sin(time * 0.00022 + x * 0.01) * 18;
-    ctx.beginPath();
-    ctx.moveTo(x + shift, 0);
-    ctx.lineTo(x + shift + height * 0.28, height);
     ctx.stroke();
   }
   ctx.restore();
 }
 
+function drawInkDrops(time) {
+  ctx.save();
+  const count = 24;
+  for (let i = 0; i < count; i += 1) {
+    const x = ((i * 97) % 1000) / 1000 * width;
+    const baseY = ((i * 181) % 1000) / 1000 * height;
+    const y = baseY + Math.sin(time * 0.00028 + i) * 10;
+    const r = 1.2 + (i % 5) * 0.65;
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255, 252, 244, ${0.045 + (i % 4) * 0.012})`;
+    ctx.fill();
+  }
+  ctx.restore();
+}
+
+function drawScene(time) {
+  ctx.clearRect(0, 0, width, height);
+
+  const sky = ctx.createLinearGradient(0, 0, 0, height);
+  sky.addColorStop(0, "#17201b");
+  sky.addColorStop(0.48, "#243c33");
+  sky.addColorStop(1, "#0f1512");
+  ctx.fillStyle = sky;
+  ctx.fillRect(0, 0, width, height);
+
+  const pullX = pointer.active ? (pointer.x - 0.5) * 28 : 0;
+  const pullY = pointer.active ? (pointer.y - 0.5) * 18 : 0;
+
+  const moonX = width * 0.72 + pullX * 0.4;
+  const moonY = height * 0.22 + pullY * 0.2;
+  const moonR = Math.max(44, Math.min(width, height) * 0.08);
+  const moonGlow = ctx.createRadialGradient(moonX, moonY, 8, moonX, moonY, moonR * 2.8);
+  moonGlow.addColorStop(0, "rgba(232, 215, 173, 0.62)");
+  moonGlow.addColorStop(0.26, "rgba(232, 215, 173, 0.18)");
+  moonGlow.addColorStop(1, "rgba(232, 215, 173, 0)");
+  ctx.fillStyle = moonGlow;
+  ctx.fillRect(0, 0, width, height);
+  ctx.beginPath();
+  ctx.arc(moonX, moonY, moonR, 0, Math.PI * 2);
+  ctx.fillStyle = "rgba(232, 215, 173, 0.78)";
+  ctx.fill();
+
+  const far = [
+    [-40, height * 0.78],
+    [width * 0.12, height * 0.52 + pullY * 0.3],
+    [width * 0.28, height * 0.64],
+    [width * 0.42, height * 0.46 + pullY * 0.2],
+    [width * 0.62, height * 0.62],
+    [width * 0.78, height * 0.42 - pullY * 0.2],
+    [width + 40, height * 0.7],
+  ];
+  const near = [
+    [-40, height * 0.9],
+    [width * 0.16, height * 0.65 + pullY * 0.2],
+    [width * 0.34, height * 0.76],
+    [width * 0.52, height * 0.57],
+    [width * 0.68, height * 0.72],
+    [width * 0.86, height * 0.54 - pullY * 0.2],
+    [width + 40, height * 0.82],
+  ];
+
+  drawMountain(far, "rgba(8, 15, 12, ALPHA)", 0.42);
+  drawMist(time);
+  drawMountain(near, "rgba(8, 15, 12, ALPHA)", 0.64);
+
+  ctx.save();
+  ctx.strokeStyle = "rgba(232, 215, 173, 0.12)";
+  ctx.lineWidth = 1;
+  for (let x = -90; x < width + 120; x += 84) {
+    const lean = Math.sin(time * 0.00018 + x) * 14;
+    ctx.beginPath();
+    ctx.moveTo(x + lean, height * 0.08);
+    ctx.lineTo(x + height * 0.2 + lean, height);
+    ctx.stroke();
+  }
+  ctx.restore();
+
+  drawInkDrops(time);
+}
+
 function animate(time = 0) {
   frame = time;
-  drawField(frame);
+  drawScene(frame);
   if (!prefersReducedMotion.matches) {
     rafId = requestAnimationFrame(animate);
   }
@@ -176,30 +170,15 @@ function setupReveal() {
   );
 
   items.forEach((item, index) => {
-    item.style.transitionDelay = `${Math.min(index * 42, 260)}ms`;
+    item.style.transitionDelay = `${Math.min(index * 36, 220)}ms`;
     observer.observe(item);
-  });
-}
-
-function setupCards() {
-  document.querySelectorAll(".project-card").forEach((card) => {
-    card.addEventListener("pointermove", (event) => {
-      const rect = card.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width - 0.5;
-      const y = (event.clientY - rect.top) / rect.height - 0.5;
-      card.style.transform = `translateY(-5px) rotateX(${y * -3}deg) rotateY(${x * 4}deg)`;
-    });
-
-    card.addEventListener("pointerleave", () => {
-      card.style.transform = "";
-    });
   });
 }
 
 window.addEventListener("scroll", handleScroll, { passive: true });
 window.addEventListener("resize", () => {
   resizeCanvas();
-  drawField(frame);
+  drawScene(frame);
 });
 
 window.addEventListener("pointermove", (event) => {
@@ -220,5 +199,4 @@ prefersReducedMotion.addEventListener("change", () => {
 resizeCanvas();
 handleScroll();
 setupReveal();
-setupCards();
 animate();
