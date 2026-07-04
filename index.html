@@ -3,196 +3,162 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>H. | Personal Portfolio</title>
+    <title>小何 | 诗与散文</title>
     <meta
       name="description"
-      content="H. 的个人网站，展示作品、经历、方法与联系信息。"
+      content="小何的个人文学网站，收录诗、散文、手札与文字片段。"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="site-shell">
       <header class="topbar" data-topbar>
-        <a class="brand" href="#home" aria-label="H. 个人网站首页">
-          <span>H.</span>
+        <a class="brand" href="#home" aria-label="小何个人文学网站首页">
+          <span>小何</span>
         </a>
         <nav class="nav-links" aria-label="主导航">
-          <a href="#work">作品</a>
-          <a href="#practice">方法</a>
-          <a href="#timeline">经历</a>
-          <a href="#contact">联系</a>
+          <a href="#home">卷首</a>
+          <a href="#poems">诗笺</a>
+          <a href="#prose">散文</a>
+          <a href="#about">关于</a>
         </nav>
       </header>
 
       <main>
         <section class="hero" id="home" aria-labelledby="hero-title">
-          <canvas class="hero-canvas" data-hero-canvas aria-hidden="true"></canvas>
-          <div class="hero-noise" aria-hidden="true"></div>
+          <canvas class="ink-canvas" data-ink-canvas aria-hidden="true"></canvas>
+          <div class="paper-grain" aria-hidden="true"></div>
 
           <div class="hero-inner">
-            <p class="eyebrow reveal">Independent designer / builder</p>
+            <p class="eyebrow reveal">Poems · Prose · Quiet Notes</p>
             <h1 class="hero-title reveal" id="hero-title">
-              H.
-              <span>把复杂想法做成清晰、漂亮、<br class="desktop-break" />可靠的作品。</span>
+              小何
+              <span>把日常的微光，写成诗与散文。</span>
             </h1>
             <p class="hero-copy reveal">
-              我关注产品体验、视觉表达和系统化思考。擅长把模糊需求整理成可落地的界面、叙事与数字产品。
+              我在风声、灯影、旧路和人心之间停笔。这里收着一些尚未远行的句子，也收着那些被生活轻轻照亮的片刻。
             </p>
             <div class="hero-actions reveal" aria-label="主要操作">
-              <a class="button button-primary" href="#work">
-                看作品
-                <span aria-hidden="true">→</span>
-              </a>
-              <a class="button button-secondary" href="#contact">
-                约一次交流
-                <span aria-hidden="true">↗</span>
-              </a>
+              <a class="button button-primary" href="#poems">读诗</a>
+              <a class="button button-secondary" href="#prose">看散文</a>
             </div>
           </div>
 
-          <div class="hero-meta reveal" aria-label="个人标签">
-            <span>Product Strategy</span>
-            <span>Creative Direction</span>
-            <span>Interface Design</span>
+          <div class="hero-quote reveal" aria-label="卷首短句">
+            <p>山水不语，纸上有风。</p>
+            <span>小何 · 卷首</span>
           </div>
         </section>
 
-        <section class="intro section-band" aria-label="简介">
-          <div class="section-inner intro-grid">
-            <p class="section-kicker reveal">Profile</p>
-            <div class="intro-copy reveal">
+        <section class="preface section-band" aria-label="卷首">
+          <div class="section-inner preface-grid">
+            <p class="section-kicker reveal">Preface</p>
+            <div class="preface-copy reveal">
               <p>
-                这是一个为个人品牌准备的高级感网站模板：克制、清晰、有视觉记忆点。它适合创作者、独立顾问、产品经理、设计师或技术型创业者。
+                文字有时像一盏低低的灯，照见屋檐下的雨，也照见心里还没有说出口的地方。
               </p>
               <p>
-                你可以把这里换成真实的职业定位、代表成果、服务方向或个人故事。
+                这个网站会慢慢收录我的诗、散文和片段。等作品集整理好后，每一篇都会有自己的位置，像一本可以翻阅的线上小册子。
               </p>
             </div>
           </div>
         </section>
 
-        <section class="work section-band" id="work" aria-labelledby="work-title">
+        <section class="works section-band" id="poems" aria-labelledby="poems-title">
           <div class="section-inner">
             <div class="section-heading reveal">
-              <p class="section-kicker">Selected Work</p>
-              <h2 id="work-title">精选作品</h2>
+              <p class="section-kicker">Poetry</p>
+              <h2 id="poems-title">诗笺</h2>
             </div>
 
-            <div class="project-grid">
-              <article class="project-card reveal">
-                <div class="project-visual visual-ink" aria-hidden="true">
-                  <span>01</span>
-                </div>
-                <div class="project-content">
-                  <p>Product System</p>
-                  <h3>把一个新业务从 0 到 1 梳理成可执行产品</h3>
-                  <a href="#contact" aria-label="了解 Product System 项目">了解更多</a>
-                </div>
+            <div class="work-grid">
+              <article class="work-card reveal">
+                <span class="work-number">一</span>
+                <p class="work-type">短诗</p>
+                <h3>月色落在窗前</h3>
+                <p>留给清夜、远山、旧梦和一切轻声经过的事物。</p>
               </article>
 
-              <article class="project-card reveal">
-                <div class="project-visual visual-emerald" aria-hidden="true">
-                  <span>02</span>
-                </div>
-                <div class="project-content">
-                  <p>Brand Presence</p>
-                  <h3>为个人品牌建立统一的叙事、页面与视觉秩序</h3>
-                  <a href="#contact" aria-label="了解 Brand Presence 项目">了解更多</a>
-                </div>
+              <article class="work-card reveal">
+                <span class="work-number">二</span>
+                <p class="work-type">组诗</p>
+                <h3>风从纸背吹来</h3>
+                <p>关于四季、离别、归途，以及那些被时间磨亮的名字。</p>
               </article>
 
-              <article class="project-card reveal">
-                <div class="project-visual visual-coral" aria-hidden="true">
-                  <span>03</span>
-                </div>
-                <div class="project-content">
-                  <p>Creative Tool</p>
-                  <h3>设计一个让团队更快对齐想法的内部工具</h3>
-                  <a href="#contact" aria-label="了解 Creative Tool 项目">了解更多</a>
-                </div>
+              <article class="work-card reveal">
+                <span class="work-number">三</span>
+                <p class="work-type">诗札</p>
+                <h3>写给未抵达的人</h3>
+                <p>把心绪折成一封薄信，寄给还在路上的自己。</p>
               </article>
             </div>
           </div>
         </section>
 
-        <section class="practice section-band" id="practice" aria-labelledby="practice-title">
-          <div class="section-inner practice-layout">
+        <section class="prose section-band" id="prose" aria-labelledby="prose-title">
+          <div class="section-inner prose-layout">
             <div class="section-heading reveal">
-              <p class="section-kicker">Practice</p>
-              <h2 id="practice-title">工作方式</h2>
+              <p class="section-kicker">Prose</p>
+              <h2 id="prose-title">散文</h2>
             </div>
 
-            <div class="principles">
-              <div class="principle reveal">
-                <span>01</span>
-                <h3>先建立判断</h3>
-                <p>把目标、受众和约束讲清楚，再进入形式和细节。</p>
-              </div>
-              <div class="principle reveal">
-                <span>02</span>
-                <h3>用结构制造美感</h3>
-                <p>好的视觉来自信息关系，而不是堆叠装饰。</p>
-              </div>
-              <div class="principle reveal">
-                <span>03</span>
-                <h3>让作品可持续</h3>
-                <p>交付的不只是页面，也包括后续可以扩展的秩序。</p>
-              </div>
+            <div class="prose-list">
+              <article class="prose-item reveal">
+                <time datetime="2026">待收录</time>
+                <div>
+                  <h3>在慢下来的时光里</h3>
+                  <p>写生活里细小的回声，写一杯茶、一段路、一场雨后还没有散去的潮气。</p>
+                </div>
+              </article>
+              <article class="prose-item reveal">
+                <time datetime="2026">待收录</time>
+                <div>
+                  <h3>人间的灯火</h3>
+                  <p>写人与人之间不喧哗的温柔，也写沉默深处仍然明亮的部分。</p>
+                </div>
+              </article>
+              <article class="prose-item reveal">
+                <time datetime="2026">待收录</time>
+                <div>
+                  <h3>山河与旧事</h3>
+                  <p>写记忆里的地方，写回望时仍有风声的年岁。</p>
+                </div>
+              </article>
             </div>
           </div>
         </section>
 
-        <section class="timeline section-band" id="timeline" aria-labelledby="timeline-title">
-          <div class="section-inner timeline-grid">
+        <section class="about section-band" id="about" aria-labelledby="about-title">
+          <div class="section-inner about-grid">
             <div class="section-heading reveal">
-              <p class="section-kicker">Experience</p>
-              <h2 id="timeline-title">经历片段</h2>
+              <p class="section-kicker">About</p>
+              <h2 id="about-title">关于小何</h2>
             </div>
-
-            <div class="timeline-list">
-              <article class="timeline-item reveal">
-                <time datetime="2026">2026</time>
-                <div>
-                  <h3>独立项目与咨询</h3>
-                  <p>帮助个人与小团队把想法做成可发布、可沟通、可迭代的数字作品。</p>
-                </div>
-              </article>
-              <article class="timeline-item reveal">
-                <time datetime="2024">2024</time>
-                <div>
-                  <h3>产品与体验设计</h3>
-                  <p>参与从策略、原型到界面交付的完整流程，连接商业目标和用户体验。</p>
-                </div>
-              </article>
-              <article class="timeline-item reveal">
-                <time datetime="2022">2022</time>
-                <div>
-                  <h3>内容与视觉叙事</h3>
-                  <p>建立跨平台的表达体系，让作品在第一眼就传递明确气质。</p>
-                </div>
-              </article>
+            <div class="about-copy reveal">
+              <p>
+                小何，写诗，也写散文。偏爱有留白的句子，偏爱清晨、黄昏、雨声和纸页翻动时的安静。
+              </p>
+              <p>
+                这里会是一个慢慢生长的文学角落。作品会按诗、散文、手札整理，也会保留一点水墨一样的空白，让读者可以在句子之间停一停。
+              </p>
             </div>
           </div>
         </section>
 
-        <section class="contact" id="contact" aria-labelledby="contact-title">
+        <section class="contact" aria-labelledby="contact-title">
           <div class="contact-inner reveal">
-            <p class="section-kicker">Contact</p>
-            <h2 id="contact-title">有一个值得认真做的想法？</h2>
-            <p>
-              可以从一次简短交流开始。把你的目标、现状和期待发过来，我会帮你一起把它变清楚。
-            </p>
-            <a class="contact-link" href="mailto:hello@example.com">
-              hello@example.com
-              <span aria-hidden="true">↗</span>
-            </a>
+            <p class="section-kicker">Letter</p>
+            <h2 id="contact-title">若有一封信，愿从文字开始。</h2>
+            <p>作品、来信或合作，都可以从这里抵达。邮箱之后可以换成你的真实联系方式。</p>
+            <a class="contact-link" href="mailto:hello@example.com">hello@example.com</a>
           </div>
         </section>
       </main>
 
       <footer class="footer">
-        <span>© 2026 H.</span>
-        <a href="#home">回到顶部</a>
+        <span>© 2026 小何</span>
+        <a href="#home">回到卷首</a>
       </footer>
     </div>
 
