@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="zh-CN">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>小何 | 诗与散文</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="小何的个人文学网站，收录诗、散文、随笔、小说片段与文字档案。"
+      content="小何的文学作品集，收录散文、诗与小说片段。"
     />
+    <title>小何 | 诗与散文</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -86,89 +86,84 @@
               <article class="feature-card reveal" data-open-work="ece260131ad6">
                 <p class="piece-kind">散文 · 未署年</p>
                 <h3>人生而有源，终不为他者</h3>
-                <p>人生而有源，终不为他者 蝴蝶要经历几十天的茧才能到地面上翩翩起舞，知了要在地下面经历三五年才能叫上一个夏天，有些花朵需要一年才开一次花。我们便说，蝴蝶的努力，知了的辛苦，花朵的坚持真叫……</p>
+                <p>人生而有源，终不为他者 蝶要经历几十天的茧才能到地面上翩翩起舞，知了要在地下面经历三五年才能叫上一个夏天，有些花朵需要一年才开一次花。我们便说，蝶的努力，知了的辛苦，花朵的坚持真叫……</p>
               </article>
+
         </div>
       </section>
 
-      <section class="library" id="library" aria-labelledby="library-title">
+      <section class="section library-section" id="library" aria-labelledby="library-title">
         <div class="library-shell">
-          <aside class="library-sidebar reveal">
+          <div class="library-intro reveal">
             <p class="section-kicker">Library</p>
             <h2 id="library-title">作品目录</h2>
             <p>可以按分类、年份和关键词筛选。点开任意作品后，会打开沉浸式阅读器。</p>
-            <div class="archive-counts" aria-label="按类型筛选作品">
+            <div class="quick-filters" aria-label="快速分类">
               <button type="button" data-filter="散文">散文 15</button>
               <button type="button" data-filter="诗">诗 2</button>
               <button type="button" data-filter="小说片段">片段 1</button>
             </div>
-          </aside>
-
-          <section class="library-main" aria-label="作品筛选与列表">
-            <div class="tools">
-              <label class="search-box">
+          </div>
+          <div class="catalog reveal">
+            <div class="catalog-tools">
+              <label>
                 搜索
-                <input data-search type="search" placeholder="输入标题、正文关键词..." />
+                <input type="search" data-search placeholder="标题 / 正文关键词" />
               </label>
               <label>
                 年份
                 <select data-year>
                   <option value="all">全部年份</option>
-<option value="未署年">未署年</option>
-<option value="2026">2026</option>
-<option value="2025">2025</option>
-<option value="2024">2024</option>
-<option value="2023">2023</option>
+                  <option value="未署年">未署年</option>
+                  <option value="2026">2026</option>
+                  <option value="2025">2025</option>
+                  <option value="2024">2024</option>
+                  <option value="2023">2023</option>
                 </select>
               </label>
             </div>
-            <div class="filter-tabs" role="tablist" aria-label="作品分类">
+            <div class="catalog-tabs" role="tablist" aria-label="作品分类">
               <button class="is-active" type="button" data-filter="all">全部</button>
-              <button type="button" data-filter="散文">散文 15</button>
-              <button type="button" data-filter="诗">诗 2</button>
-              <button type="button" data-filter="小说片段">片段 1</button>
+              <button type="button" data-filter="散文">散文</button>
+              <button type="button" data-filter="诗">诗</button>
+              <button type="button" data-filter="小说片段">片段</button>
             </div>
-            <div class="result-meta" data-result-meta></div>
+            <p class="catalog-count" data-catalog-count></p>
             <div class="work-list" data-work-list></div>
-          </section>
+          </div>
         </div>
       </section>
 
-      <section class="reader" data-reader aria-hidden="true">
-        <div class="reader-panel">
-          <button class="reader-close" type="button" data-reader-close aria-label="关闭阅读器">×</button>
-          <p class="reader-meta" data-reader-meta></p>
-          <h2 data-reader-title></h2>
-          <div class="reader-content" data-reader-content></div>
-        </div>
+      <section class="section archive-note" aria-labelledby="archive-note-title">
+        <p class="section-kicker reveal">Unlisted</p>
+        <h2 class="reveal" id="archive-note-title">暂缓收录清单</h2>
+        <p class="reveal">
+          一句话、明显草稿、重复内容、过短片段，以及你特别说明不收录的主题，已经单独整理成清单，方便你之后再决定。
+        </p>
+        <a class="text-link reveal" href="未收录清单.html">查看未收录作品</a>
       </section>
 
       <section class="section about" id="about" aria-labelledby="about-title">
-        <div class="about-grid">
-          <div class="section-heading reveal">
-            <p class="section-kicker">About</p>
-            <h2 id="about-title">关于小何</h2>
-          </div>
-          <div class="about-copy reveal">
-            <p>
-              小何，写诗，也写散文。文字里有月夜、热风、课堂、游戏、网络和身体里的时间感。
-            </p>
-            <p>
-              这个网站现在更像一间作品档案室：前厅给精选，深处给完整目录。读者可以快速翻，也可以慢慢停。
-            </p>
-          </div>
+        <div class="section-heading reveal">
+          <p class="section-kicker">About</p>
+          <h2 id="about-title">关于小何</h2>
+        </div>
+        <div class="about-copy reveal">
+          <p>
+            小何，写诗，也写散文。文字里有月夜、热风、课堂、游戏、网络和身体里的时间感。
+          </p>
+          <p>
+            这里像一本缓慢翻开的线上小册子：有抒情，也有思辨；有轻声的亲密，也有对日常秩序的凝视。
+          </p>
         </div>
       </section>
 
-      <section class="contact" id="contact" aria-labelledby="contact-title">
-        <div class="contact-inner reveal">
-          <p class="section-kicker">Letter</p>
-          <h2 id="contact-title">若有一封信，愿从文字开始。</h2>
-          <p>作品、来信或交流，可以通过 QQ 联系小何。</p>
-          <a
-            class="contact-link"
-            href="https://wpa.qq.com/msgrd?v=3&amp;uin=2839844044&amp;site=qq&amp;menu=yes"
-          >
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
+        <div class="contact-card reveal">
+          <p class="section-kicker">Contact</p>
+          <h2 id="contact-title">联系</h2>
+          <p>如果你想聊作品、聊阅读，或只是递来一句问候，可以通过 QQ 找到我。</p>
+          <a href="https://wpa.qq.com/msgrd?v=3&amp;uin=2839844044&amp;site=qq&amp;menu=yes">
             QQ 2839844044
           </a>
         </div>
@@ -181,6 +176,8 @@
       <a href="#home">回到卷首</a>
     </footer>
     <script src="works-data.js"></script>
+    <script src="works-data-2.js"></script>
+    <script src="works-data-3.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
