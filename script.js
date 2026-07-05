@@ -26,6 +26,16 @@ const BLOCKED_KEYWORDS = [
   "阴茎",
   "阴道",
   "欲望",
+  "擦边",
+  "求偶",
+  "性暗示",
+  "性行为",
+  "desire",
+  "lust",
+  "sexual",
+  "erotic",
+  "kiss",
+  "lie on you",
   "中医",
   "针灸",
   "经络",
@@ -33,7 +43,18 @@ const BLOCKED_KEYWORDS = [
   "肾虚",
   "中药",
   "艾灸",
-  "气血"
+  "气血",
+  "阴阳五行"
+];
+
+const PUBLIC_TONE_BLOCKED_KEYWORDS = [
+  "尼玛",
+  "鸡毛",
+  "踏马",
+  "傻逼",
+  "老子",
+  "拧下来",
+  "我真是吐了"
 ];
 
 let activeFilter = "all";
@@ -59,7 +80,9 @@ function workText(work) {
 
 function hasBlockedTopic(work) {
   const text = workText(work).toLowerCase();
-  return BLOCKED_KEYWORDS.some((keyword) => text.includes(keyword.toLowerCase()));
+  return [...BLOCKED_KEYWORDS, ...PUBLIC_TONE_BLOCKED_KEYWORDS].some((keyword) =>
+    text.includes(keyword.toLowerCase())
+  );
 }
 
 function isSubstantialWork(work) {
