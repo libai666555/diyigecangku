@@ -113,7 +113,14 @@ function getDisplayWorks() {
 }
 
 function findWorkById(id) {
-  return getDisplayWorks().find((work) => work.id === id) || getFallbackWorks().find((work) => work.id === id);
+  const displayWorks = getDisplayWorks();
+  const directMatch = displayWorks.find((work) => work.id === id);
+  if (directMatch) return directMatch;
+
+  const fallbackMatch = getFallbackWorks().find((work) => work.id === id);
+  if (!fallbackMatch) return null;
+
+  return displayWorks.find((work) => work.title === fallbackMatch.title) || fallbackMatch;
 }
 
 function pruneFeatureCards() {
