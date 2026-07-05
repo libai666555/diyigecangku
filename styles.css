@@ -90,6 +90,38 @@ button, input, select { font: inherit; }
   color: var(--white);
   overflow: hidden;
 }
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  top: clamp(92px, 13vw, 150px);
+  right: max(24px, calc((100vw - var(--max)) / 2 + 42px));
+  width: clamp(168px, 22vw, 330px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 37% 32%, rgba(255, 252, 241, 0.98), rgba(242, 226, 181, 0.9) 42%, rgba(196, 168, 102, 0.2) 68%, transparent 72%);
+  box-shadow:
+    0 0 46px rgba(232, 215, 173, 0.28),
+    0 0 120px rgba(232, 215, 173, 0.18);
+  opacity: 0.9;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  top: clamp(94px, 13vw, 154px);
+  right: max(24px, calc((100vw - var(--max)) / 2 + 42px));
+  width: clamp(168px, 22vw, 330px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    linear-gradient(130deg, transparent 0 54%, rgba(23, 32, 27, 0.25) 55% 100%),
+    radial-gradient(circle at 65% 38%, rgba(255, 252, 244, 0.18) 0 1px, transparent 2px),
+    radial-gradient(circle at 47% 66%, rgba(94, 82, 58, 0.16) 0 2px, transparent 3px);
+  opacity: 0.65;
+  mix-blend-mode: multiply;
+}
 .ink-canvas, .paper-grain { position: absolute; inset: 0; z-index: -2; }
 .ink-canvas { width: 100%; height: 100%; }
 .paper-grain {
@@ -314,14 +346,16 @@ button, input, select { font: inherit; }
 .reader-panel {
   position: relative;
   width: min(100%, 900px);
-  max-height: min(86svh, 900px);
+  max-height: calc(100svh - 56px);
   overflow: auto;
-  padding: clamp(28px, 5vw, 56px);
+  padding: clamp(30px, 5vw, 58px) clamp(28px, 5vw, 56px) clamp(56px, 8vw, 92px);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--paper);
   color: var(--ink);
   box-shadow: var(--shadow);
+  scrollbar-gutter: stable;
+  overscroll-behavior: contain;
 }
 .reader-close {
   position: sticky;
@@ -389,12 +423,19 @@ button, input, select { font: inherit; }
   .brand small { display: none; }
   .nav-links a { min-width: 0; padding: 9px 5px; font-size: 0.78rem; }
   .hero { min-height: 86svh; padding: 102px 18px 30px; }
+  .hero::before,
+  .hero::after {
+    top: 88px;
+    right: -52px;
+    width: 184px;
+    opacity: 0.72;
+  }
   .hero-actions, .button { width: 100%; }
   .section, .library, .contact { padding-right: 18px; padding-left: 18px; }
   .tools { grid-template-columns: 1fr; }
   .work-card { grid-template-columns: 1fr; gap: 8px; }
   .work-card .date { text-align: left; }
   .reader { padding: 12px; }
-  .reader-panel { max-height: 92svh; }
+  .reader-panel { max-height: calc(100svh - 24px); padding-bottom: 72px; }
   .footer { flex-direction: column; padding-right: 18px; padding-left: 18px; }
 }
