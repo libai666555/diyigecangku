@@ -1,183 +1,597 @@
 <!doctype html>
 <html lang="zh-CN">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>小何 | 诗与散文</title>
     <meta
       name="description"
-      content="小何的文学作品集，收录散文、诗与小说片段。"
+      content="小何的个人文学网站，收录诗、散文、手札与文字片段。"
     />
-    <title>小何 | 诗与散文</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="topbar" data-topbar>
-      <a class="brand" href="#home" aria-label="小何文学网站首页">
-        <span>小何</span>
-        <small>Archive</small>
-      </a>
-      <nav class="nav-links" aria-label="主导航">
-        <a href="#home">卷首</a>
-        <a href="#featured">精选</a>
-        <a href="#library">目录</a>
-        <a href="#about">关于</a>
-        <a href="#contact">联系</a>
-      </nav>
-    </header>
+    <div class="site-shell">
+      <header class="topbar" data-topbar>
+        <a class="brand" href="#home" aria-label="小何个人文学网站首页">
+          <span>小何</span>
+        </a>
+        <nav class="nav-links" aria-label="主导航">
+          <a href="#home">卷首</a>
+          <a href="#works">作品</a>
+          <a href="#poems">诗</a>
+          <a href="#prose">散文</a>
+          <a href="#contact">联系</a>
+        </nav>
+      </header>
 
-    <main>
-      <section class="hero" id="home" aria-labelledby="hero-title">
-        <canvas class="ink-canvas" data-ink-canvas aria-hidden="true"></canvas>
-        <div class="paper-grain" aria-hidden="true"></div>
-        <div class="hero-inner">
-          <p class="eyebrow reveal">Poems · Prose · Archive</p>
-          <h1 class="hero-title reveal" id="hero-title">小何</h1>
-          <p class="hero-copy reveal">
-            这里整理了我写过的大部分诗、散文、随笔和片段。让它们从散落的文档里出来，成为一本可以检索、翻阅、停留的线上作品集。
-          </p>
-          <div class="hero-actions reveal">
-            <a class="button button-primary" href="#library">进入作品目录</a>
-            <a class="button button-secondary" href="#featured">先读精选</a>
-          </div>
-        </div>
-        <aside class="hero-stats reveal" aria-label="作品统计">
-          <p><strong>18</strong><span>篇精选收录</span></p>
-          <p><strong>1.7万</strong><span>约计文字</span></p>
-          <p><strong>180</strong><span>篇暂缓收录</span></p>
-        </aside>
-      </section>
+      <main>
+        <section class="hero" id="home" aria-labelledby="hero-title">
+          <canvas class="ink-canvas" data-ink-canvas aria-hidden="true"></canvas>
+          <div class="paper-grain" aria-hidden="true"></div>
 
-      <section class="section featured" id="featured" aria-labelledby="featured-title">
-        <div class="section-heading reveal">
-          <p class="section-kicker">Selected</p>
-          <h2 id="featured-title">作品精选</h2>
-        </div>
-        <div class="feature-grid">
-              <article class="feature-card reveal" data-open-work="e4453f5ff7e0">
-                <p class="piece-kind">散文 · 未署年</p>
-                <h3>《槐荫书》</h3>
-                <p>《槐荫书》 老槐树在晨雾中苏醒时，檐角的风铃正数到第七声叮咚。我赤脚踩过被露水打湿的青砖，看见自己的名字正从树皮褶皱里浮出来——十三年前用铅笔刀刻下的稚嫩笔画，此刻被朝阳镀成淡金色，像……</p>
-              </article>
-
-              <article class="feature-card reveal" data-open-work="ef9fb86d7aae">
-                <p class="piece-kind">散文 · 未署年</p>
-                <h3>老师，似乎一直以来都是高尚的，神圣的。</h3>
-                <p>老师，似乎一直以来都是高尚的，神圣的。 自我读书以来，很少有我真正尊敬的老师，这似乎和人无完人类似，毕竟都是凡人而不是圣人。不过我知道我的老师们对我的好，我也记得老师们对我的不好。我从……</p>
-              </article>
-
-              <article class="feature-card reveal" data-open-work="4e6e0dacdd07">
-                <p class="piece-kind">散文 · 未署年</p>
-                <h3>茶的氛围</h3>
-                <p>茶的氛围 ——《茶经》读书笔记 我个人是很喜欢喝茶的，我已经记不得我最初为什么喝茶了，也许是我不喜欢喝饮料，却又觉得直接喝水有点乏味。 我喜欢喝茶大可能是因为我喜欢喝水吧，果然我觉得人……</p>
-              </article>
-
-              <article class="feature-card reveal" data-open-work="375783ef2323">
-                <p class="piece-kind">小说片段 · 未署年</p>
-                <h3>我知道，但我不那么做。</h3>
-                <p>我知道，但我不那么做。 少年该是怎样的呢？我不知道，但我想必也不平静。 少年的心是火热的，嘴上也许答应着，但心里早有别的计划。而我，是连嘴上也不肯松口，要是有人骂我几句，我定要骂回去才……</p>
-              </article>
-
-              <article class="feature-card reveal" data-open-work="fc5ee1ee59c0">
-                <p class="piece-kind">散文 · 未署年</p>
-                <h3>上一次写文章是五月23，也就是40天前。</h3>
-                <p>上一次写文章是五月23，也就是40天前。 其实自我没怎么发朋友圈以来，我就减少了写文章了，因为我发现好多文章根本不是写给自己看的，而是写给朋友圈，别人看的，就会写得做作，而我写给自己记……</p>
-              </article>
-
-              <article class="feature-card reveal" data-open-work="ece260131ad6">
-                <p class="piece-kind">散文 · 未署年</p>
-                <h3>人生而有源，终不为他者</h3>
-                <p>人生而有源，终不为他者 蝶要经历几十天的茧才能到地面上翩翩起舞，知了要在地下面经历三五年才能叫上一个夏天，有些花朵需要一年才开一次花。我们便说，蝶的努力，知了的辛苦，花朵的坚持真叫……</p>
-              </article>
-
-        </div>
-      </section>
-
-      <section class="section library-section" id="library" aria-labelledby="library-title">
-        <div class="library-shell">
-          <div class="library-intro reveal">
-            <p class="section-kicker">Library</p>
-            <h2 id="library-title">作品目录</h2>
-            <p>可以按分类、年份和关键词筛选。点开任意作品后，会打开沉浸式阅读器。</p>
-            <div class="quick-filters" aria-label="快速分类">
-              <button type="button" data-filter="散文">散文 15</button>
-              <button type="button" data-filter="诗">诗 2</button>
-              <button type="button" data-filter="小说片段">片段 1</button>
+          <div class="hero-inner">
+            <p class="eyebrow reveal">Poems · Prose · Quiet Notes</p>
+            <h1 class="hero-title reveal" id="hero-title">
+              小何
+              <span>让星星、月色、课堂和风，都在纸上慢慢发亮。</span>
+            </h1>
+            <p class="hero-copy reveal">
+              这里收着一些诗，也收着一些散文。句子从日常里来，又在纸上停一停，像山水不语时留下的回声。
+            </p>
+            <div class="hero-actions reveal" aria-label="主要操作">
+              <a class="button button-primary" href="#works">读作品</a>
+              <a class="button button-secondary" href="#contact">联系小何</a>
             </div>
           </div>
-          <div class="catalog reveal">
-            <div class="catalog-tools">
-              <label>
-                搜索
-                <input type="search" data-search placeholder="标题 / 正文关键词" />
-              </label>
-              <label>
-                年份
-                <select data-year>
-                  <option value="all">全部年份</option>
-                  <option value="未署年">未署年</option>
-                  <option value="2026">2026</option>
-                  <option value="2025">2025</option>
-                  <option value="2024">2024</option>
-                  <option value="2023">2023</option>
-                </select>
-              </label>
-            </div>
-            <div class="catalog-tabs" role="tablist" aria-label="作品分类">
-              <button class="is-active" type="button" data-filter="all">全部</button>
-              <button type="button" data-filter="散文">散文</button>
-              <button type="button" data-filter="诗">诗</button>
-              <button type="button" data-filter="小说片段">片段</button>
-            </div>
-            <p class="catalog-count" data-catalog-count></p>
-            <div class="work-list" data-work-list></div>
+
+          <div class="hero-quote reveal" aria-label="卷首短句">
+            <p>星星很细<br />连成星云的线</p>
+            <span>小何 · 2025-11-14</span>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="section archive-note" aria-labelledby="archive-note-title">
-        <p class="section-kicker reveal">Unlisted</p>
-        <h2 class="reveal" id="archive-note-title">暂缓收录清单</h2>
-        <p class="reveal">
-          一句话、明显草稿、重复内容、过短片段，以及你特别说明不收录的主题，已经单独整理成清单，方便你之后再决定。
-        </p>
-        <a class="text-link reveal" href="未收录清单.html">查看未收录作品</a>
-      </section>
+        <section class="preface section-band" aria-label="卷首">
+          <div class="section-inner preface-grid">
+            <p class="section-kicker reveal">Preface</p>
+            <div class="preface-copy reveal">
+              <p>
+                文字有时像一盏低低的灯，照见屋檐下的雨，也照见心里还没有说出口的地方。
+              </p>
+              <p>
+                这个网站收录小何的诗与散文。它会继续生长，也会保留一点水墨一样的空白，让读者可以在句子之间停一停。
+              </p>
+            </div>
+          </div>
+        </section>
 
-      <section class="section about" id="about" aria-labelledby="about-title">
-        <div class="section-heading reveal">
-          <p class="section-kicker">About</p>
-          <h2 id="about-title">关于小何</h2>
-        </div>
-        <div class="about-copy reveal">
-          <p>
-            小何，写诗，也写散文。文字里有月夜、热风、课堂、游戏、网络和身体里的时间感。
-          </p>
-          <p>
-            这里像一本缓慢翻开的线上小册子：有抒情，也有思辨；有轻声的亲密，也有对日常秩序的凝视。
-          </p>
-        </div>
-      </section>
+        <section class="featured section-band" id="works" aria-labelledby="works-title">
+          <div class="section-inner">
+            <div class="section-heading reveal">
+              <p class="section-kicker">Selected Works</p>
+              <h2 id="works-title">作品选读</h2>
+            </div>
 
-      <section class="section contact" id="contact" aria-labelledby="contact-title">
-        <div class="contact-card reveal">
-          <p class="section-kicker">Contact</p>
-          <h2 id="contact-title">联系</h2>
-          <p>如果你想聊作品、聊阅读，或只是递来一句问候，可以通过 QQ 找到我。</p>
-          <a href="https://wpa.qq.com/msgrd?v=3&amp;uin=2839844044&amp;site=qq&amp;menu=yes">
-            QQ 2839844044
-          </a>
-        </div>
-      </section>
-    </main>
+            <div class="featured-grid">
+              <article class="feature-card feature-card-large reveal">
+                <p class="piece-kind">诗 · 2024-10-4</p>
+                <h3>皎洁的月夜</h3>
+                <p class="feature-lines">
+                  我为什么要睡觉<br />
+                  在这月色华美的时刻<br />
+                  我们的天空还没有黑暗<br />
+                  我为什么要睡觉
+                </p>
+              </article>
 
-    <footer class="footer">
-      <span>© 2026 小何</span>
-      <span>18 篇精选作品</span>
-      <a href="#home">回到卷首</a>
-    </footer>
-    <script src="works-data.js"></script>
-    <script src="works-data-2.js"></script>
-    <script src="works-data-3.js"></script>
+              <article class="feature-card reveal">
+                <p class="piece-kind">散文 · 2025-5-24</p>
+                <h3>泥土钻进了我的鞋里</h3>
+                <p>
+                  过去和未来将我双重拉扯，思想在时间河流的概率云上生病，成了一个真正随机的坐标。
+                </p>
+              </article>
+
+              <article class="feature-card reveal">
+                <p class="piece-kind">散文 · 2024-5-9</p>
+                <h3>生活在故事里的 NPC</h3>
+                <p>
+                  一样的音乐，一样的视频，一样的三观，一样的人格。网络将我们拉进，同时又将我们推远。
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="library section-band" id="poems" aria-labelledby="poems-title">
+          <div class="section-inner library-layout">
+            <div class="section-heading side-heading reveal">
+              <p class="section-kicker">Poetry</p>
+              <h2 id="poems-title">诗</h2>
+            </div>
+
+            <div class="piece-list">
+              <details class="piece-card reveal" open>
+                <summary>
+                  <span class="piece-kind">诗</span>
+                  <span class="piece-title">无题 · 星星很细</span>
+                  <time datetime="2025-11-14">2025-11-14</time>
+                </summary>
+                <div class="piece-body poem-lines">
+                  <p>
+                    星星很细<br />
+                    连成星云的线<br />
+                    勾勒出细致的彩<br />
+                    你能看见吗<br />
+                    我总看星星
+                  </p>
+                  <p>
+                    你在身边吗<br />
+                    那我抱抱你
+                  </p>
+                </div>
+              </details>
+
+              <details class="piece-card reveal">
+                <summary>
+                  <span class="piece-kind">诗</span>
+                  <span class="piece-title">无题 · 指尖不能触碰</span>
+                  <time datetime="2025-10-20">2025-10-20</time>
+                </summary>
+                <div class="piece-body poem-lines">
+                  <p>
+                    指尖不能触碰<br />
+                    心跳不能同步<br />
+                    的确让人遗憾<br />
+                    但时间拉长<br />
+                    我们总有那个最小的公倍数<br />
+                    不必执着眼前的因数
+                  </p>
+                </div>
+              </details>
+
+              <details class="piece-card reveal" open>
+                <summary>
+                  <span class="piece-kind">中英双写</span>
+                  <span class="piece-title">Bright Moonlit Night · 皎洁的月夜</span>
+                  <time datetime="2024-10-04">2024-10-4</time>
+                </summary>
+                <div class="piece-body dual-poem">
+                  <div class="poem-lines">
+                    <p>
+                      Why should I sleep<br />
+                      in this moment of splendid moonlight,<br />
+                      our sky has not yet<br />
+                      fallen into darkness?<br />
+                      Why should I sleep?
+                    </p>
+                    <p>
+                      In these nights<br />
+                      some winds pass through the tip of my heart,<br />
+                      taking away the heat,<br />
+                      taking away the desire.<br />
+                      I don’t really want to do it,<br />
+                      just lie on you<br />
+                      and wait for sleep.
+                    </p>
+                    <p>
+                      Those white clouds—<br />
+                      did they promise the moon<br />
+                      to stay still?<br />
+                      And those dark trees in the distance<br />
+                      make me afraid,<br />
+                      yet they are quiet,<br />
+                      yet they are kind.<br />
+                      So I keep staring at the moon,<br />
+                      lost in it.
+                    </p>
+                    <p>
+                      Hm? Let me kiss you.<br />
+                      A symbolic question,<br />
+                      you are not allowed to refuse.<br />
+                      Just like this,<br />
+                      waiting for sleep,<br />
+                      waiting for dawn.
+                    </p>
+                  </div>
+                  <div class="poem-lines">
+                    <p>
+                      我为什么要睡觉<br />
+                      在这月色华美的时刻<br />
+                      我们的天空还没有黑暗<br />
+                      我为什么要睡觉
+                    </p>
+                    <p>
+                      这些夜里<br />
+                      有一些风通透了我的心尖<br />
+                      除去可能留下的炽热和欲望<br />
+                      我其实不想做<br />
+                      只想趴在你身上等待睡觉
+                    </p>
+                    <p>
+                      那些白云啊<br />
+                      是和月亮说好了不动吗<br />
+                      还有远处的黑黑的树<br />
+                      让我觉得恐惧，静谧又慈祥<br />
+                      我就这样望着月亮<br />
+                      痴痴的
+                    </p>
+                    <p>
+                      嗯？让我亲亲你<br />
+                      象征性地询问也不准你拒绝<br />
+                      就这样<br />
+                      等待睡觉<br />
+                      等待黎明
+                    </p>
+                  </div>
+                </div>
+              </details>
+
+              <details class="piece-card reveal">
+                <summary>
+                  <span class="piece-kind">诗</span>
+                  <span class="piece-title">无题 · 衣服用褶皱在布料上制造光的形状</span>
+                  <time datetime="2025-09-28">2025-9-28</time>
+                </summary>
+                <div class="piece-body poem-lines">
+                  <p>
+                    衣服用褶皱在布料上制造光的形状<br />
+                    我用灵魂在身体上倒映时间的波纹
+                  </p>
+                  <p>
+                    等明年的秋天<br />
+                    我答应你<br />
+                    那不是躯体的幻梦
+                  </p>
+                  <p>
+                    我答应你<br />
+                    质量随时间的平方递减<br />
+                    能量随时间的平方递增
+                  </p>
+                </div>
+              </details>
+
+              <details class="piece-card reveal">
+                <summary>
+                  <span class="piece-kind">诗</span>
+                  <span class="piece-title">无题 · 九月的热风</span>
+                  <time datetime="2025-09-25">2025-9-25</time>
+                </summary>
+                <div class="piece-body poem-lines">
+                  <p>
+                    九月的热风浸泡躁动<br />
+                    水火集结<br />
+                    企图吞没一切<br />
+                    吞没任何可能存在的希望<br />
+                    和宇宙一同混沌
+                  </p>
+                  <p>
+                    可生命是伟大的负熵<br />
+                    生命传递负熵<br />
+                    能量从身体流过<br />
+                    思想消散于水火交际<br />
+                    思想诞生于水火交际
+                  </p>
+                </div>
+              </details>
+
+              <details class="piece-card reveal">
+                <summary>
+                  <span class="piece-kind">诗</span>
+                  <span class="piece-title">无题 · 喜欢是不完全明白的结果吗</span>
+                  <span>未署日期</span>
+                </summary>
+                <div class="piece-body poem-lines">
+                  <p>
+                    喜欢是不完全明白的结果吗<br />
+                    在我知道折射的彩虹之后<br />
+                    在我知道所有思想的一本书之后<br />
+                    在我知道利益的奉承之后<br />
+                    在我知道原因的结果之后
+                  </p>
+                  <p>
+                    就再也不会感到神秘
+                  </p>
+                </div>
+              </details>
+
+              <details class="piece-card reveal">
+                <summary>
+                  <span class="piece-kind">诗</span>
+                  <span class="piece-title">《上课》</span>
+                  <span>未署日期</span>
+                </summary>
+                <div class="piece-body poem-lines">
+                  <p>
+                    我——<br />
+                    在上课<br />
+                    我——<br />
+                    也在玩游戏<br />
+                    我——<br />
+                    太认真了<br />
+                    在玩游戏的时候<br />
+                    还在上课
+                  </p>
+                  <p>
+                    我——<br />
+                    只想玩<br />
+                    我——<br />
+                    听不懂他在讲什么<br />
+                    即使<br />
+                    听懂了<br />
+                    期末也会忘<br />
+                    速成课<br />
+                    三小时<br />
+                    听懂了<br />
+                    也会忘<br />
+                    期末<br />
+                    又要听一遍<br />
+                    还不如<br />
+                    不听
+                  </p>
+                  <p>
+                    就像<br />
+                    以前的<br />
+                    高数——<br />
+                    物理——<br />
+                    线代——<br />
+                    一样。
+                  </p>
+                </div>
+              </details>
+
+              <details class="piece-card reveal">
+                <summary>
+                  <span class="piece-kind">诗</span>
+                  <span class="piece-title">清清</span>
+                  <time datetime="2024-06-10">2024-6-10</time>
+                </summary>
+                <div class="piece-body poem-lines">
+                  <p>
+                    树鸟啼我醒，微光照白影。<br />
+                    所见皆无事，决战峡谷里。<br />
+                    但求浅轻输，却又抱胜晋。<br />
+                    人生几回生，生生知人生。<br />
+                    不知腹中空，方觉马上死。<br />
+                    金光透树照，绿叶衬晚霞。<br />
+                    敢问此时情，人生得意时。
+                  </p>
+                </div>
+              </details>
+
+              <details class="piece-card reveal">
+                <summary>
+                  <span class="piece-kind">诗</span>
+                  <span class="piece-title">《超级文化》</span>
+                  <time datetime="2024-05-28">2024-5-28</time>
+                </summary>
+                <div class="piece-body poem-lines">
+                  <p>
+                    跨过黑夜的间隙<br />
+                    窥视黎明的光彩<br />
+                    黑夜能创造生命<br />
+                    黎明也能
+                  </p>
+                  <p>
+                    人类为造人添砖加瓦<br />
+                    所有的人都在为此奋斗<br />
+                    ——优雅地创造生命<br />
+                    文化，就此诞生
+                  </p>
+                </div>
+              </details>
+
+              <details class="piece-card reveal">
+                <summary>
+                  <span class="piece-kind">诗</span>
+                  <span class="piece-title">火</span>
+                  <time datetime="2024-05-19">2024-5-19</time>
+                </summary>
+                <div class="piece-body poem-lines">
+                  <p>
+                    我用虚幻的神经<br />
+                    凝聚洁白的你
+                  </p>
+                  <p>
+                    我思念，如果你在远方<br />
+                    电流从指尖传入火热的心脏<br />
+                    我燃烧，如果你在眼前
+                  </p>
+                </div>
+              </details>
+
+              <details class="piece-card reveal">
+                <summary>
+                  <span class="piece-kind">诗</span>
+                  <span class="piece-title">无题 · 要怎样才能完成</span>
+                  <time datetime="2024-05-01">2024-5-1</time>
+                </summary>
+                <div class="piece-body poem-lines">
+                  <p>
+                    要怎样才能完成<br />
+                    一首完美的诗<br />
+                    一幅完美的作品<br />
+                    一种完美的人生<br />
+                    要说的话太多<br />
+                    千言万语都在三言两语里了
+                  </p>
+                  <p>
+                    人类总会忙忙碌碌<br />
+                    试着证明这些，证明那些<br />
+                    这里的文化一次接着一次<br />
+                    思想也一次接一次<br />
+                    电脑玩家僵硬地对白，行走<br />
+                    世界每一次的刷新<br />
+                    就会带走真实的玩家
+                  </p>
+                  <p>
+                    然后藐视所有<br />
+                    成为虚空
+                  </p>
+                </div>
+              </details>
+
+              <details class="piece-card reveal">
+                <summary>
+                  <span class="piece-kind">诗</span>
+                  <span class="piece-title">无题 · 我本来不会写诗</span>
+                  <span>未署日期</span>
+                </summary>
+                <div class="piece-body poem-lines">
+                  <p>
+                    我本来<br />
+                    不会写诗<br />
+                    直到我<br />
+                    学会了换行
+                  </p>
+                </div>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        <section class="library prose-library section-band" id="prose" aria-labelledby="prose-title">
+          <div class="section-inner library-layout">
+            <div class="section-heading side-heading reveal">
+              <p class="section-kicker">Prose</p>
+              <h2 id="prose-title">散文</h2>
+            </div>
+
+            <div class="piece-list">
+              <details class="piece-card prose-piece reveal" open>
+                <summary>
+                  <span class="piece-kind">散文</span>
+                  <span class="piece-title">泥土钻进了我的鞋里</span>
+                  <time datetime="2025-05-24">2025-5-24</time>
+                </summary>
+                <div class="piece-body prose-text">
+                  <p>
+                    那天泥土钻进了我的鞋里，脚掌轻易地碾碎，风是柔和的，小草不会因为我踩了它就停止生长，我不会因为天黑就选择睡觉。
+                  </p>
+                  <p>
+                    童年时光随着年龄增长在脑海里构建出黄金时代。或许我一直没有美好的时光，只是随着年龄愈发痛苦，显得童年美好。我患上了怀旧病。
+                  </p>
+                  <p>
+                    另一边我又为那可能发生的灾难预支焦虑，或许它明天就来，或许它永远也不会来。身体里流淌着活下来的祖先的血，不允许我忽略焦虑。
+                  </p>
+                  <p>
+                    过去和未来将我双重拉扯，思想在时间河流的概率云上生病，成了一个真正随机的坐标，不可知于当下。
+                  </p>
+                  <p>
+                    当太阳发出没有偏见的电磁波，我吃上经过损失的能量，太阳不在意它是否制造了生命，而我的身体却在无限渴求。
+                  </p>
+                  <p>
+                    自意识在概率云里诞生，我就要求他成为最完美的概率云，不断地汲取时间，我明白了所有的情绪不过是激素的把戏。我爱你，因为我要掩盖繁殖的欲望。人类为此发明了浪漫的文化，似乎也只是在含蓄地进行爱你的仪式。我明白，我不可能回避，我的出现正是因为祖先的欲望。
+                  </p>
+                  <p>
+                    当第120秒的二氧化碳抵达橡树叶片的线粒体时，那个在田埂上抖落泥土的孩童，正抬头看见此刻我呼出的云。意识剩下的只有体验。
+                  </p>
+                  <p>
+                    花一小时P图发朋友圈的美食，却忘记了最开始咀嚼食物的触感和神经反射；透过十几个镜片拍摄的极光照片，视网膜却从未接触光子；试图用大数据匹配恋人，却在算法的推荐中错过了眼神交错的量子纠缠。
+                  </p>
+                  <p>
+                    我要专注呼吸120秒，让二氧化碳携带此刻的信息进入碳循环。
+                  </p>
+                  <p>
+                    时间是什么，是我的意识在现实世界的随机映射。
+                  </p>
+                </div>
+              </details>
+
+              <details class="piece-card prose-piece reveal" open>
+                <summary>
+                  <span class="piece-kind">散文</span>
+                  <span class="piece-title">生活在故事里的 NPC</span>
+                  <time datetime="2024-05-09">2024-5-9</time>
+                </summary>
+                <div class="piece-body prose-text">
+                  <p>
+                    每当听到刷过的视频又从别人的手机上响起，就会感觉是生活在故事里的NPC。
+                  </p>
+                  <p>
+                    清晨醒来，手机翻手就来，习惯性地点开抖音，我也不知道要看些什么，但既然已经点开了，那便看吧。一个接一个的视频里的信息会冲淡这个问题。或许乌木威尔维恩恩耶尔吐温威乌温穆本欧萨斯会给出答案。
+                  </p>
+                  <p>
+                    只要肯吃苦就会有吃不完的苦，既然如此我便减少吃苦。毕竟生活已经很苦了，能怪别人就别怪自己。不然年轻的时候很穷，努力几年就终于不年轻了。
+                  </p>
+                  <p>
+                    我若是感到几多无聊，游戏也是次要选择。几千万人和我一起玩同一个游戏。我若是玩累了，一份带有鸡肉的饭菜也是随处可见。
+                  </p>
+                  <p>
+                    一样的音乐，一样的视频，一样的三观，一样的人格。
+                  </p>
+                  <p>
+                    我曾以为那个测试人格的玩意纯纯侮辱我智商，而现在不一样的了，“冠以名而六欲泛生”，人与人之间越来越近了，人与人之间的距离也越来越远了。
+                  </p>
+                  <p>
+                    就像你一会看云一会看我，你看云的时候很近，看我的时候很远。
+                  </p>
+                  <p>
+                    也许各自心怀鬼胎，但却又异口同声。网络将我们拉进，同时又将我们推远。
+                  </p>
+                  <p>
+                    假期，如果有空，可能会去某个地方旅游。说是旅游，不过大部分时间都挺无聊的，去过一两次，不难发现这里的空气没什么不同，这里的人也没什么特别，不过这里的物价挺高，除了感觉自己亏了，没有别样的感觉。
+                  </p>
+                  <p>
+                    于是一句先苦后甜，苦我一年又一年。
+                  </p>
+                  <p>
+                    于是，这般单调的，可预见的，一眼望到头的明天的生活就是NPC的日常生活。
+                  </p>
+                  <p>
+                    NPC的人生转折不算多，高考以及很多的考试占了大部分。
+                  </p>
+                  <p>
+                    仿佛梦魂归帝所，某一刻神游天外，带着马面的人拿着过期的吉他高举呐喊，吹着有毒的沙尘暴。
+                  </p>
+                  <p>
+                    颓然之间，乌木威尔维恩恩耶尔吐温威乌温穆本欧萨斯仿佛看透时空，远唤未来。只能承载这无端的寂寞。
+                  </p>
+                </div>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        <section class="about section-band" aria-labelledby="about-title">
+          <div class="section-inner about-grid">
+            <div class="section-heading reveal">
+              <p class="section-kicker">About</p>
+              <h2 id="about-title">关于小何</h2>
+            </div>
+            <div class="about-copy reveal">
+              <p>
+                小何，写诗，也写散文。文字里有月夜、热风、课堂、游戏、网络和身体里的时间感。
+              </p>
+              <p>
+                这里像一本缓慢翻开的线上小册子：有抒情，也有思辨；有轻声的亲密，也有对日常秩序的凝视。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact" id="contact" aria-labelledby="contact-title">
+          <div class="contact-inner reveal">
+            <p class="section-kicker">Letter</p>
+            <h2 id="contact-title">若有一封信，愿从文字开始。</h2>
+            <p>作品、来信或交流，可以通过 QQ 联系小何。</p>
+            <a
+              class="contact-link"
+              href="https://wpa.qq.com/msgrd?v=3&amp;uin=2839844044&amp;site=qq&amp;menu=yes"
+            >
+              QQ 2839844044
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>© 2026 小何</span>
+        <span>QQ 2839844044</span>
+        <a href="#home">回到卷首</a>
+      </footer>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
